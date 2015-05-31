@@ -3,7 +3,6 @@ package com.tutsplus.palette;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.v4.graphics.ColorUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.view.View;
@@ -16,12 +15,12 @@ public class MainActivity extends AppCompatActivity {
     private ListView mListView;
     private SwatchAdapter mAdapter;
 
-    private TextView mVibrant;
-    private TextView mLightVibrant;
-    private TextView mDarkVibrant;
-    private TextView mMuted;
-    private TextView mLightMuted;
-    private TextView mDarkMuted;
+    private TextView mVibrantTextView;
+    private TextView mLightVibrantTextView;
+    private TextView mDarkVibrantTextView;
+    private TextView mMutedTextView;
+    private TextView mLightMutedTextView;
+    private TextView mDarkMutedTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,18 +34,18 @@ public class MainActivity extends AppCompatActivity {
         mListView.setAdapter( mAdapter );
 
         Bitmap bitmap = BitmapFactory.decodeResource( getResources(), R.drawable.union_station );
-        Palette.from( bitmap ).generate(new Palette.PaletteAsyncListener() {
+        Palette.from( bitmap ).generate( new Palette.PaletteAsyncListener() {
             @Override
-            public void onGenerated(Palette palette) {
+            public void onGenerated( Palette palette ) {
 
-                setViewSwatch( mVibrant, palette.getVibrantSwatch() );
-                setViewSwatch( mLightVibrant, palette.getLightVibrantSwatch() );
-                setViewSwatch( mDarkVibrant, palette.getDarkVibrantSwatch() );
-                setViewSwatch( mMuted, palette.getMutedSwatch() );
-                setViewSwatch( mLightMuted, palette.getLightMutedSwatch() );
-                setViewSwatch( mDarkMuted, palette.getDarkMutedSwatch() );
+                setViewSwatch( mVibrantTextView, palette.getVibrantSwatch() );
+                setViewSwatch( mLightVibrantTextView, palette.getLightVibrantSwatch() );
+                setViewSwatch( mDarkVibrantTextView, palette.getDarkVibrantSwatch() );
+                setViewSwatch( mMutedTextView, palette.getMutedSwatch() );
+                setViewSwatch( mLightMutedTextView, palette.getLightMutedSwatch() );
+                setViewSwatch( mDarkMutedTextView, palette.getDarkMutedSwatch() );
 
-                for (Palette.Swatch swatch : palette.getSwatches()) {
+                for( Palette.Swatch swatch : palette.getSwatches() ) {
                     mAdapter.add(swatch);
                 }
 
@@ -70,11 +69,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void initViews() {
         mListView = (ListView) findViewById( R.id.list );
-        mVibrant = (TextView) findViewById( R.id.vibrant );
-        mLightVibrant = (TextView) findViewById( R.id.light_vibrant );
-        mDarkVibrant = (TextView) findViewById( R.id.dark_vibrant );
-        mMuted = (TextView) findViewById( R.id.muted );
-        mLightMuted = (TextView) findViewById( R.id.light_muted );
-        mDarkMuted = (TextView) findViewById( R.id.dark_muted );
+        mVibrantTextView = (TextView) findViewById( R.id.vibrant );
+        mLightVibrantTextView = (TextView) findViewById( R.id.light_vibrant );
+        mDarkVibrantTextView = (TextView) findViewById( R.id.dark_vibrant );
+        mMutedTextView = (TextView) findViewById( R.id.muted );
+        mLightMutedTextView = (TextView) findViewById( R.id.light_muted );
+        mDarkMutedTextView = (TextView) findViewById( R.id.dark_muted );
     }
 }

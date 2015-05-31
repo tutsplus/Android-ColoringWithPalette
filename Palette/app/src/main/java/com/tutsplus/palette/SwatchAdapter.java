@@ -37,7 +37,7 @@ public class SwatchAdapter extends ArrayAdapter<Palette.Swatch> {
 
         holder.view.setBackgroundColor( getItem( position ).getRgb() );
         holder.view.setTextColor( getItem( position ).getBodyTextColor() );
-        holder.view.setText("Population: " + getItem(position).getPopulation());
+        holder.view.setText( "Population: " + getItem( position ).getPopulation() );
 
         return convertView;
     }
@@ -45,7 +45,7 @@ public class SwatchAdapter extends ArrayAdapter<Palette.Swatch> {
     public void sortSwatches() {
         sort(new Comparator<Palette.Swatch>() {
             @Override
-            public int compare(Palette.Swatch lhs, Palette.Swatch rhs) {
+            public int compare( Palette.Swatch lhs, Palette.Swatch rhs ) {
                 return rhs.getPopulation() - lhs.getPopulation();
             }
         });
