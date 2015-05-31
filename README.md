@@ -1,6 +1,6 @@
-#Tuts+ Tutorial: Coloring Android Apps with Palette
+###Tuts+ Tutorial: Coloring Android Apps with Palette
 
-#Instructor: Paul Trebilcox-Ruiz
+###Instructor: Paul Trebilcox-Ruiz
 
 One of the defining features of material design is the use of color to compliment and emphasize content on the screen. Using the Palette class, developers can extract prominent colors from a bitmap for use in their apps to customize UI elements.
 
